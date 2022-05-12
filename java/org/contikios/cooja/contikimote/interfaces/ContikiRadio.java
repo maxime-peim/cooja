@@ -377,6 +377,7 @@ public class ContikiRadio extends Radio implements ContikiMoteInterface, PolledA
 
       /* Calculate transmission duration (us) */
       /* XXX Currently floored due to millisecond scheduling! */
+      size += 8;
       long duration = (int) (Simulation.MILLISECOND*((8 * size /*bits*/) / RADIO_TRANSMISSION_RATE_kbps));
       transmissionEndTime = now + Math.max(1, duration);
 
